@@ -6,7 +6,6 @@ html, body {
 #app {
     width: 100vw;
     height: 100vh;
-    border-radius: 24px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -16,38 +15,38 @@ html, body {
 .top-bar-app {
     display: flex;
     align-items: center;
+    justify-content: center;
     font: 700 38px Recursive;
 }
 
 .top-bar-app img {
-    margin: auto 38px;
     height: 38px;
+    margin: auto 38px;
 }
 
-.user-list {
-    width: 400px;
-    min-height: 480px;
-
-    margin-top: 48px;
+.user-list ul {
+    width: 600px;
+    max-height: 500px;
     border-radius: 18px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    overflow-y: scroll;
     background-color: #ED6143;
 }
 
 .user-list li {
-    margin: 8px;
     color: #ffff;
     list-style: none;
-
+    text-align: start;
     font: 1.2rem sans-serif;
     font-family: Recurvise;
 }
 
-input {
+.bottom-bar-app {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.bottom-bar-app input {
     height: 38px;
     width: 340px;
     margin-bottom: 18px;

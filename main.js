@@ -10,6 +10,7 @@ function renderElement() {
 
     for (repo of repository) {
         var itemList = document.createElement('li');
+
         var textItemList = document.createTextNode(repo);
 
         itemList.appendChild(textItemList);
@@ -22,6 +23,7 @@ function getUserRepo(userName) {
     axios.get(`https://api.github.com/users/${userName}/repos`).then((result) => {
         for (repo of result['data']) {
             const { name } = repo;
+
             repository.push(name);
         }
 
@@ -31,11 +33,11 @@ function getUserRepo(userName) {
 }
 
 function searchUser() {
-    const textValue = inputElement.value;
-    if (!textValue) {
+    if (!inputElement.value) {
         alert('The name cannot be empty');
         return;
     }
+    const textValue = inputElement.value;
 
     getUserRepo(textValue);
     inputElement.value = '';
